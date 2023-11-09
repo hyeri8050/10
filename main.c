@@ -4,13 +4,10 @@
 
 int main(int argc, char *argv[])
 {
-  char src[] = "The worst things to eat before you sleep"; 
-  char dst[100]; //dst : destination
+  char src[30] = "happy C programming"; 
   
-  strcpy(dst, src); //배열의 이름만 넣으면 됨 
-  
-  printf("copied string : %s\n", dst);
-  
+  printf("문자열 \"%s\"의 길이 : %i\n", src, strlen(src) ); 
+
   system("PAUSE");	
   return 0;
 }
