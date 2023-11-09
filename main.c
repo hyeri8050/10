@@ -5,24 +5,24 @@
 int main(int argc, char *argv[])
 {
   FILE* fp;
-  char str[100];
-  int i;
+  char c;
   
-  //1. open file
-  fp = fopen("sample.txt", "w");
+  //1. open file (Read)
+  fp = fopen("sample.txt", "r");
   
-  //2. write file
-  for(i=0; i<3; i++)
+  //error handling
+  if (fp == NULL)
   {
-      //2-1. print "input a word"
-      printf("Input a word : ");
-      //2-2. scanf a string
-      scanf("%s", str);
-      //2-3. fprintf();
-      fprintf(fp, "%s\n", str);
-
+     printf("Failed to open\n");
+     return 0;
   }
-
+  
+  //2. 파일을 읽어서 내용 출력 
+  while( (c = fgetc(fp)) != EOF) //한글자 읽은게 마지막이 아니면 
+  {
+     putchar(c); //한글자 출력 
+  }
+      
   //3. close file
   fclose(fp);
   
